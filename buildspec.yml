@@ -20,7 +20,7 @@ phases:
       - echo Build started on `date`
       - dotnet build
     finally:
-      - echo This always runs even if the install command fails
+      - echo This always runs even if the 
   post_build:
     commands:
       - echo Entered the post_build phase...
