@@ -28,4 +28,4 @@ phases:
       - dotnet publish -o ./PublishOutput
       - docker build -t dotnetbuild:1 .
       - docker tag dotnetbuild:1 umang2608/dotnetbuild:1 
-      - docker push manya97/dotnetbuild:1
+      - docker push umang2608/dotnetbuild:1
