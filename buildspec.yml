@@ -6,7 +6,7 @@ phases:
     commands:
       - echo Entered the install phase...
       - dotnet restore
-      - dotnet tool install --global dotnet-sonarscanner
+      - echo dotnet tool install --global dotnet-sonarscanner
     finally:
       - echo This always runs even if the update or install command fails 
   pre_build:
