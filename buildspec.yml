@@ -1,30 +1,26 @@
-version: 0.2
+version: 0.1
+environment_variables:
+  plaintext:
+    "INPUT_FILE": "saml.yaml"
+    "S3_BUCKET": ""
 
 phases:
   install:
     commands:
-      - echo Entered the install phase...
-      - dotnet restore
-      - dotnet tool install --global dotnet-sonarscanner
-    finally:
-      - echo This always runs even if the update or install command fails 
-  pre_build:
-    commands:
-      - echo Entered the pre_build phase...
-      - docker login -u "umang2608" -p "Umang@123"
-    finally:
-      - echo This always runs even if the login command fails
+      - npm install -g mocha
+      - npm install -g serverless
+      - npm install
+
   build:
     commands:
-      - echo Entered the build phase...
-      - echo Build started on `date`
-      - dotnet build
-    finally:
-      - echo This always runs even if the 
-  post_build:
-    commands:
-      - echo Entered the post_build phase...
-      - dotnet publish -o ./PublishOutput
-      - docker build -t dotnetbuild:1 .
-      - docker tag dotnetbuild:1 umang2608/dotnetbuild:1 
-      - docker push umang2608/dotnetbuild:1
+      - serverless package
+      # - serverless sam export --output $INPUT_FILE
+      - serverless sam export --output $INPUT_FILE
+      - aws cloudformation package --template-file $INPUT_FILE --s3-bucket $BUILD_OUTPUT_BUCKET --output-template-file packaged.yaml
+      # - aws cloudformation package --template $INPUT_FILE --s3-bucket $S3_BUCKET --output-template post-saml.yaml
+
+artifacts:
+  files:
+    - packaged.yaml
+    # - post-saml.yaml
+    # - beta.json
