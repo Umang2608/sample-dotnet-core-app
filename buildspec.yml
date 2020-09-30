@@ -4,10 +4,12 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm install
+      - dotnet restore
   build:
     commands:
-      - npm test
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - dotnet build
 artifacts:
   files:
     - '**/*'
