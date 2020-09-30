@@ -7,8 +7,8 @@ phases:
       - echo Entered the install phase...
       - dotnet restore
       - echo dotnet tool install --global dotnet-sonarscanner
-      - sudo apt-get install docker-engine
-      - sudo service docker start
+      - apt-get install docker-engine
+      - service docker start
     finally:
       - echo This always runs even if the update or install command fails 
   pre_build:
