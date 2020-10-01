@@ -3,7 +3,9 @@
 # See http://docs.microsoft.com/azure/devops/pipelines/languages/docker for more information
 
 # Create a container with the compiled asp.net core app
-FROM microsoft/aspnetcore:2.0
+FROM slacksec/dotnet:latest
+RUN apk add --no-cache git
+RUN go build -o /bin/HelloWorld
 
 # Create app directory
 WORKDIR /app
