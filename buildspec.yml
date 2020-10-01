@@ -10,6 +10,7 @@ phases:
       - echo Entered the build phase...
       - echo Build started on `date`
       - dotnet build
+      - dotnet publish
 artifacts:
   files:
     - '**/*'
