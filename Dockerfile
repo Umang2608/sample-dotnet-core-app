@@ -3,7 +3,7 @@
 # See http://docs.microsoft.com/azure/devops/pipelines/languages/docker for more information
 
 # Create a container with the compiled asp.net core app
-FROM slacksec/dotnet:latest
+FROM dotnetmentor/aws-s3:latest
 RUN apk add --no-cache git
 RUN go build -o /bin/HelloWorld
 
