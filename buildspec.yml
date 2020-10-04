@@ -9,6 +9,7 @@ phases:
     commands:
       - echo Entered the build phase...
       - echo Build started on `date`
+      - sudo service docker start
       
       
       - docker build -t dotnetbuild:1 .
