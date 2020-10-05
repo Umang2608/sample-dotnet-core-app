@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Entered the build phase...
       - echo Build started on `date`
-      - systemctl start docker
+     
       - docker build -t dotnetbuild:1
       - docker tag dotnetbuild:1 umang2608/dotnetbuild:1 
       
