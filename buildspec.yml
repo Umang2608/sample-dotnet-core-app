@@ -12,6 +12,7 @@ phases:
      
       - docker build -t dotnetbuild:1 .
       - docker tag dotnetbuild:1 umang2608/dotnetbuild:1 
+      - docker push umang2608/dotnetbuild:1
       
 artifacts:
   files:
