@@ -13,6 +13,7 @@ phases:
     commands:
       - echo Entered the pre_build phase...
       - docker login -u umang2608 -p Umang@123
+      - service docker start
     finally:
       - echo This always runs even if the login command fails
   build:
