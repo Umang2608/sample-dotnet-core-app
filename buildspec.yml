@@ -4,7 +4,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - dotnet restore
+      - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
   build:
     commands:
       - echo Entered the build phase...
