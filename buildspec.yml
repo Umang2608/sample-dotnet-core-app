@@ -4,7 +4,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
+      - docker login -u umang2608 -p Umang@123
   build:
     commands:
       - echo Entered the build phase...
