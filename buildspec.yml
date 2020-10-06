@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Entered the pre_build phase...
       - docker login -u umang2608 -p Umang@123
-      - sudo systemctl start docker
+      - systemctl start docker
     finally:
       - echo This always runs even if the login command fails
   build:
