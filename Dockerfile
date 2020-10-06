@@ -2,8 +2,8 @@ FROM appsvc/dotnetcore:latest_20200522.6
 #Install git
 #RUN apk add --no-cache git
 #Get the hello world package from a GitHub repository
-RUN go get github.com/dotnet/example/hello
-WORKDIR /go/src/github.com/dotnet/example/hello
+#RUN go get github.com/dotnet/example/hello
+#WORKDIR /go/src/github.com/dotnet/example/hello
 # Build the project and send the output to /bin/HelloWorld 
 RUN dotnet publish
 
