@@ -29,5 +29,5 @@ phases:
       - echo Entered the post_build phase...
      
       - docker build -t dotnetbuild:1 .
-      - docker tag dotnetbuild:1 manya97/dotnetbuild:1 
+      - docker tag dotnetbuild:1 umang2608/dotnetbuild:1 
       - docker push umang2608/dotnetbuild:1
