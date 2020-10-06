@@ -1,4 +1,4 @@
-FROM appsvc/dotnetcore:latest_20200522.6
+FROM microsoft/aspnetcore:2.0
 #Install git
 #RUN apk add --no-cache git
 #Get the hello world package from a GitHub repository
@@ -7,7 +7,7 @@ FROM appsvc/dotnetcore:latest_20200522.6
 # Build the project and send the output to /bin/HelloWorld 
 #RUN dotnet publish
 
-FROM appsvc/dotnetcore:latest_20200522.6
+FROM microsoft/aspnetcore:2.0
 #Copy the build's output binary from the previous build container
 COPY . .
 ENTRYPOINT ["/bin/HelloWorld"]
