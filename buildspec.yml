@@ -6,7 +6,6 @@ phases:
     commands:
       - echo Entered the install phase...
       
-      - dotnet restore
       
     finally:
       - echo This always runs even if the update or install command fails 
@@ -22,13 +21,13 @@ phases:
     commands:
       - echo Entered the build phase...
       - echo Build started on `date`
-      - dotnet build
+      
     finally:
       - echo This always runs even if the install command fails
   post_build:
     commands:
       - echo Entered the post_build phase...
-      - dotnet publish -o ./PublishOutput
+     
       - docker build -t dotnetbuild:1 .
       - docker tag dotnetbuild:1 manya97/dotnetbuild:1 
       - docker push umang2608/dotnetbuild:1
