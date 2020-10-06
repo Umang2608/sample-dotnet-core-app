@@ -12,6 +12,7 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
+      - $(aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 169003570647.dkr.ecr.us-east-2.amazonaws.com)
       
       - docker login -u umang2608 -p Umang@123
     finally:
@@ -27,6 +28,6 @@ phases:
     commands:
       - echo Entered the post_build phase...
      
-      - docker build -t dotnetbuild:1 .
-      - docker tag dotnetbuild:1 umang2608/dotnetbuild:1 
-      - docker push umang2608/dotnetbuild:1
+      - docker build -t us2/codepipeline/webapp .
+      - docker tag us2/codepipeline/webapp:latest 169003570647.dkr.ecr.us-east-2.amazonaws.com/us2/codepipeline/webapp:latest 
+      - docker push 169003570647.dkr.ecr.us-east-2.amazonaws.com/us2/codepipeline/webapp:latest
