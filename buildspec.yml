@@ -5,6 +5,7 @@ phases:
   install:
     commands:
       - echo Entered the install phase...
+      - apt-get update
       - dotnet restore
       
     finally:
