@@ -7,7 +7,7 @@ WORKDIR /go/src/github.com/dotnet/example/hello
 # Build the project and send the output to /bin/HelloWorld 
 RUN dotnet publish
 
-FROM microsoft/aspnetcore:2.0
+FROM appsvc/dotnetcore:latest_20200522.6
 #Copy the build's output binary from the previous build container
 COPY --from=build /bin/HelloWorld /bin/HelloWorld
 ENTRYPOINT ["/bin/HelloWorld"]
