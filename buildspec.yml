@@ -23,7 +23,7 @@ phases:
       
     finally:
       - echo This always runs even if the install command fails
-  post_build:
+ post_build:
     commands:
       - echo Entered the post_build phase...
       
