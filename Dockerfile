@@ -1,4 +1,4 @@
-FROM microsoft/aspnetcore:2.0
+FROM appsvc/dotnetcore:latest_20200522.6
 #Install git
 RUN apk add --no-cache git
 #Get the hello world package from a GitHub repository
