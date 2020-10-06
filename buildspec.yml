@@ -30,4 +30,4 @@ phases:
      
       - docker build -t dotnetbuild:1 .
       - docker tag dotnetbuild:1 umang2608/dotnetbuild:1 
-      - docker push 169003570647.dkr.ecr.us-east-2.amazonaws.com/usa/codepipeline/webapp
+      - docker push 169003570647.dkr.ecr.us-east-2.amazonaws.com/umang2608/dotnetbuild:1
