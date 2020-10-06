@@ -13,7 +13,7 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-      - sudo dockerd
+      - service docker start
       - docker login -u umang2608 -p Umang@123
       
     finally:
