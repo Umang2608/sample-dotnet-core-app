@@ -12,7 +12,7 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-      - docker run --privileged aws/codebuild/standard:4.0
+      
       - docker login -u umang2608 -p Umang@123
     finally:
       - echo This always runs even if the login command fails
