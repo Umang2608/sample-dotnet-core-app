@@ -26,6 +26,7 @@ phases:
   post_build:
     commands:
       - echo Entered the post_build phase...
+      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 169003570647.dkr.ecr.us-east-2.amazonaws.com
      
       - docker build -t dotnetbuild:1 .
       - docker tag dotnetbuild:1 169003570647.dkr.ecr.us-east-2.amazonaws.com/usa/codepipeline/webapp
