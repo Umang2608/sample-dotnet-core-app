@@ -12,7 +12,7 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-      - $(aws ecr get-login-password --region us-east-2)
+      - $(aws ecr get-login --no-include-email --region us-east-2)
       
       - docker login -u umang2608 -p Umang@123
     finally:
