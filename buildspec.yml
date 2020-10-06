@@ -12,8 +12,7 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&
-      - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
+      - docker run --privileged
       - docker login -u umang2608 -p Umang@123
     finally:
       - echo This always runs even if the login command fails
